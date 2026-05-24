@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Domingas, esta proposta é para si · Cajú Doce</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --wine: #6B1028;
+      --wine-dark: #4A0A1B;
+      --gold: #C9A24B;
+      --gold-light: #E0BE6F;
+      --cream: #FBF6E9;
+      --cream-dark: #F0E6CC;
+      --ink: #2A0A12;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .serif { font-family: 'Playfair Display', serif; }
+
+    /* ── LAYOUT ── */
+    .wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ── TOPO WINE ── */
+    .top-bar {
+      background: var(--wine-dark);
+      color: var(--gold-light);
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, var(--wine-dark) 0%, var(--wine) 60%, #8C1A38 100%);
+      color: var(--cream);
+      padding: 60px 20px 70px;
+      text-align: center;
+    }
+    .hero .eyebrow {
+      display: inline-block;
+      background: rgba(201,162,75,0.18);
+      border: 1px solid rgba(201,162,75,0.4);
+      color: var(--gold-light);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      padding: 6px 18px;
+      border-radius: 100px;
+      margin-bottom: 22px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 6vw, 3rem);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--gold-light);
+    }
+    .hero .sub {
+      font-size: 17px;
+      color: rgba(251,246,233,0.88);
+      max-width: 520px;
+      margin: 0 auto 30px;
+    }
+    .hero .badge-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 28px;
+    }
+    .badge {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.18);
+      color: rgba(251,246,233,0.9);
+      font-size: 12px;
+      padding: 6px 14px;
+      border-radius: 100px;
+    }
+
+    /* ── SECTIONS ── */
+    section { padding: 54px 0; }
+    section + section { border-top: 1px solid rgba(107,16,40,0.08); }
+
+    h2.section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      color: var(--wine);
+      margin-bottom: 10px;
+    }
+    .label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    p { margin-bottom: 16px; color: rgba(42,10,18,0.82); font-size: 16px; }
+    p:last-child { margin-bottom: 0; }
+    strong { color: var(--wine); font-weight: 700; }
+
+    /* ── DOR / ANTES ── */
+    .dor-list {
+      list-style: none;
+      margin: 20px 0;
+    }
+    .dor-list li {
+      padding: 12px 16px 12px 44px;
+      background: rgba(107,16,40,0.04);
+      border-left: 3px solid var(--wine);
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 8px;
+      font-size: 15px;
+      position: relative;
+      color: var(--ink);
+    }
+    .dor-list li::before {
+      content: '✕';
+      position: absolute;
+      left: 14px;
+      color: var(--wine);
+      font-weight: 700;
+    }
+
+    /* ── FEATURES ── */
+    .features {
+      display: grid;
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .feature-card {
+      background: white;
+      border: 1px solid rgba(107,16,40,0.1);
+      border-radius: 14px;
+      padding: 20px 22px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      box-shadow: 0 4px 16px -6px rgba(107,16,40,0.12);
+    }
+    .feature-icon {
+      font-size: 26px;
+      line-height: 1;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .feature-card h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--wine);
+      margin-bottom: 4px;
+    }
+    .feature-card p {
+      font-size: 14px;
+      margin: 0;
+    }
+
+    /* ── PROVA ── */
+    .proof-box {
+      background: linear-gradient(135deg, var(--wine) 0%, var(--wine-dark) 100%);
+      color: var(--cream);
+      border-radius: 20px;
+      padding: 36px 30px;
+      margin-top: 28px;
+      text-align: center;
+    }
+    .proof-box blockquote {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.1rem, 3vw, 1.4rem);
+      font-style: italic;
+      line-height: 1.55;
+      color: var(--gold-light);
+      margin-bottom: 16px;
+    }
+    .proof-box p { color: rgba(251,246,233,0.75); font-size: 14px; }
+
+    /* ── ANCORAGEM / PREÇO ── */
+    .price-section { background: var(--cream-dark); border-radius: 24px; padding: 40px 30px; }
+    .price-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin: 24px 0;
+    }
+    .price-line {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 15px;
+    }
+    .price-line .desc { flex: 1; }
+    .price-line .val {
+      font-weight: 700;
+      font-size: 18px;
+      white-space: nowrap;
+    }
+    .strike { text-decoration: line-through; color: rgba(42,10,18,0.4); }
+    .anchor { color: rgba(42,10,18,0.5); }
+    .final-price {
+      background: var(--wine);
+      color: var(--cream);
+      border-radius: 14px;
+      padding: 18px 20px;
+    }
+    .final-price .val { color: var(--gold-light); font-size: 22px; }
+    .final-price .desc { font-weight: 600; }
+
+    .combo-box {
+      background: white;
+      border: 2px dashed var(--gold);
+      border-radius: 14px;
+      padding: 18px 20px;
+      margin-top: 20px;
+      font-size: 15px;
+    }
+    .combo-box .combo-title {
+      font-weight: 700;
+      color: var(--wine);
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+    .combo-box ul {
+      list-style: none;
+      padding: 0;
+    }
+    .combo-box ul li::before { content: '🧁 '; }
+    .combo-box ul li { margin-bottom: 4px; font-size: 14px; color: var(--ink); }
+
+    /* ── O QUE ENTREGA ── */
+    .entrega-list {
+      list-style: none;
+      margin-top: 20px;
+    }
+    .entrega-list li {
+      display: flex;
+      gap: 12px;
+      padding: 11px 0;
+      border-bottom: 1px solid rgba(107,16,40,0.07);
+      font-size: 15px;
+    }
+    .entrega-list li:last-child { border-bottom: none; }
+    .entrega-list .check { color: var(--gold); font-weight: 700; flex-shrink: 0; }
+
+    /* ── CTA ── */
+    .cta-section {
+      background: linear-gradient(135deg, var(--wine-dark) 0%, var(--wine) 100%);
+      color: var(--cream);
+      border-radius: 24px;
+      padding: 50px 30px;
+      text-align: center;
+      margin: 0 0 60px;
+    }
+    .cta-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      color: var(--gold-light);
+      margin-bottom: 14px;
+    }
+    .cta-section p { color: rgba(251,246,233,0.85); margin-bottom: 28px; font-size: 16px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--gold);
+      color: var(--wine-dark);
+      font-weight: 700;
+      font-size: 16px;
+      padding: 16px 32px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: transform 0.15s, background 0.15s;
+      box-shadow: 0 8px 24px -6px rgba(201,162,75,0.5);
+    }
+    .btn:hover { background: var(--gold-light); transform: translateY(-2px); }
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid rgba(255,255,255,0.3);
+      color: rgba(251,246,233,0.9);
+      font-size: 14px;
+      padding: 12px 24px;
+      border-radius: 100px;
+      text-decoration: none;
+      margin-top: 14px;
+      transition: background 0.15s;
+    }
+    .btn-ghost:hover { background: rgba(255,255,255,0.08); }
+
+    .urgency {
+      margin-top: 20px;
+      font-size: 13px;
+      color: rgba(251,246,233,0.6);
+      letter-spacing: 0.05em;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 12px;
+      color: rgba(42,10,18,0.4);
+      border-top: 1px solid rgba(107,16,40,0.1);
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      width: 48px;
+      height: 3px;
+      background: var(--gold);
+      border-radius: 2px;
+      margin: 14px 0 22px;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 480px) {
+      .hero { padding: 50px 16px 60px; }
+      section { padding: 40px 0; }
+      .price-section, .cta-section { padding: 32px 20px; }
+      .proof-box { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">Domingas — Esta proposta é só para si 🎀</div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap">
+      <span class="eyebrow">Para a Domingas · Cajú Doce</span>
+      <h1>Domingas, o seu negócio merece mais do que<br><em>mensagens no WhatsApp</em>.</h1>
+      <p class="sub">
+        Imagina os seus clientes a encontrarem os seus bolos e doces online, escolherem o que querem
+        e a encomenda a chegar direto ao seu WhatsApp — a qualquer hora, sem esforço.
+      </p>
+      <div class="badge-row">
+        <span class="badge">📱 Mobile-first</span>
+        <span class="badge">🛒 Encomendas automáticas</span>
+        <span class="badge">📣 Pronto para anúncios</span>
+        <span class="badge">⚡ Já está no ar</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- DOR: O PROBLEMA -->
+  <section>
+    <div class="wrap">
+      <p class="label">O que está a custar-lhe dinheiro</p>
+      <h2 class="section-title">Domingas, a Cajú Doce merece mais do que isto.</h2>
+      <div class="divider"></div>
+      <p>
+        Hoje, quando alguém quer encomendar os seus bolos, o que acontece? Procura no Instagram,
+        manda uma mensagem, espera resposta. E se demorar? <strong>Vai à concorrência.</strong>
+      </p>
+      <ul class="dor-list">
+        <li>Clientes perdem-se porque não encontram o seu catálogo online</li>
+        <li>Perde horas a responder às mesmas perguntas de preço e disponibilidade</li>
+        <li>Não consegue escalar anúncios sem um link profissional para enviar</li>
+        <li>A sua marca parece menor do que realmente é</li>
+        <li>Cada encomenda depende de si estar disponível no momento</li>
+      </ul>
+      <p>
+        A solução não é trabalhar mais. É ter um <strong>sistema a trabalhar por si.</strong>
+      </p>
+    </div>
+  </section>
+
+  <!-- O QUE O SITE FAZ -->
+  <section>
+    <div class="wrap">
+      <p class="label">A solução que criei para si</p>
+      <h2 class="section-title">Um site que vende enquanto você dorme.</h2>
+      <div class="divider"></div>
+      <p>
+        Criei um site completo para a Cajú Doce — pensado de raiz para converter visitas em encomendas
+        e escalável para anúncios pagos no Instagram e Facebook.
+      </p>
+      <div class="features">
+        <div class="feature-card">
+          <div class="feature-icon">🛒</div>
+          <div>
+            <h3>Sistema de encomendas automático</h3>
+            <p>O cliente escolhe os produtos, preenche os dados e a encomenda vai direto ao seu WhatsApp — formatada, completa, sem trocas de mensagem.</p>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📣</div>
+          <div>
+            <h3>Pronto para anúncios pagos</h3>
+            <p>Link profissional para enviar nas campanhas do Meta Ads. O anúncio aponta para o site, o site converte, os pedidos chegam a si. Simples assim.</p>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📱</div>
+          <div>
+            <h3>Mobile-first — feito para o telemóvel</h3>
+            <p>Mais de 90% dos seus clientes estão no telemóvel. O site foi desenhado para eles primeiro — rápido, bonito e fácil de usar.</p>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎨</div>
+          <div>
+            <h3>Marca premium, imagem de luxo</h3>
+            <p>Cores, tipografia e fotos que traduzem o que a Cajú Doce realmente é: uma confeitaria de alto padrão em Marracuene.</p>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🚀</div>
+          <div>
+            <h3>Online 24h, no ar hoje</h3>
+            <p>Já está publicado e funcionando. Nenhum cliente vai encontrar uma página vazia. O site está pronto para receber tráfego agora.</p>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📅</div>
+          <div>
+            <h3>Política de 48h integrada</h3>
+            <p>O formulário de encomenda bloqueia datas com menos de 48h. Chega ao fim as encomendas impossíveis de última hora.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROVA: VER O SITE -->
+  <section>
+    <div class="wrap">
+      <p class="label">Já está construído</p>
+      <h2 class="section-title">Não é promessa. É realidade.</h2>
+      <div class="divider"></div>
+      <p>
+        Muitos vendem sites que ainda vão fazer. Eu fiz primeiro, para si ver —
+        com os seus produtos, as suas fotos, as suas cores e os seus preços.
+      </p>
+      <p>
+        <strong>Pode visitar agora mesmo.</strong> Abra no telemóvel como um cliente seu faria.
+        Adicione um produto ao cesto. Veja a encomenda a chegar ao WhatsApp.
+      </p>
+      <div class="proof-box">
+        <blockquote>
+          "Qualidade que se sente.<br>Sabor que se lembra."
+        </blockquote>
+        <p>— Já está escrito no seu site, a representar a sua marca.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- O QUE ENTREGA -->
+  <section>
+    <div class="wrap">
+      <p class="label">O que está incluído</p>
+      <h2 class="section-title">Tudo feito. Tudo seu.</h2>
+      <div class="divider"></div>
+      <ul class="entrega-list">
+        <li><span class="check">✔</span> Site completo publicado e no ar (cajudoce.up.railway.app)</li>
+        <li><span class="check">✔</span> Todos os seus produtos com fotos, descrições e preços</li>
+        <li><span class="check">✔</span> Sistema de encomendas integrado com o seu WhatsApp</li>
+        <li><span class="check">✔</span> Design premium mobile-first (burgundy + dourado)</li>
+        <li><span class="check">✔</span> Combos Família Luxo e Especial Eid na vitrine</li>
+        <li><span class="check">✔</span> Página de contacto, redes sociais, horário e política de 48h</li>
+        <li><span class="check">✔</span> Código-fonte no GitHub — é sempre seu</li>
+        <li><span class="check">✔</span> Hospedagem no Railway incluída no primeiro mês</li>
+        <li><span class="check">✔</span> Pronto para escalar anúncios pagos amanhã</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PREÇO / ANCORAGEM -->
+  <section>
+    <div class="wrap">
+      <p class="label">A oferta</p>
+      <h2 class="section-title">Um investimento, não um custo.</h2>
+      <div class="divider"></div>
+      <p>
+        Um site profissional para negócio alimentar em Moçambique, com sistema de encomendas,
+        design de marca e pronto para anúncios? No mercado, <strong>custa entre 15.000 a 25.000 MZM</strong>.
+        E muitas vezes demora semanas.
+      </p>
+      <p>
+        Este site <strong>já está feito</strong>. Feito para si. Feito para vender.
+        Domingas, estou a trabalhar com a Cajú Doce porque acredito no seu negócio — e por isso faço uma proposta diferente, só para si.
+      </p>
+
+      <div class="price-section">
+        <div class="price-stack">
+          <div class="price-line">
+            <span class="desc anchor">Valor de mercado real</span>
+            <span class="val strike">20.000 MZM</span>
+          </div>
+          <div class="price-line">
+            <span class="desc anchor">Preço que pratico normalmente</span>
+            <span class="val strike anchor">10.000 MZM</span>
+          </div>
+          <div class="price-line final-price">
+            <span class="desc">🎁 Proposta especial para si</span>
+            <span class="val">8.000 MZM</span>
+          </div>
+        </div>
+
+        <p style="font-size:14px; color:rgba(42,10,18,0.65); margin-top: 6px;">
+          Estou a abrir mão de 2.000 MZM porque quero ver a Cajú Doce crescer — e em vez disso, peço o seguinte:
+        </p>
+
+        <div class="combo-box">
+          <div class="combo-title">🍰 Em vez de 10.000 MZM, aceito 8.000 MZM + o Combo Família</div>
+          <ul>
+            <li>1 Kg de Bolachas Variadas</li>
+            <li>12 Muffins com Pepitas</li>
+            <li>1 Bolo Loaf Cake</li>
+          </ul>
+          <p style="margin-top:10px; font-size:13px; color:rgba(42,10,18,0.6);">
+            Porque se eu vou ajudá-la a vender mais doces, o mínimo é provar que são tão bons quanto digo. 😄
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- URGÊNCIA / FINAL -->
+  <section style="padding-bottom: 0;">
+    <div class="wrap">
+      <p class="label">Agora é consigo</p>
+      <h2 class="section-title">Domingas, o site já está pronto. A decisão é sua.</h2>
+      <div class="divider"></div>
+      <p>
+        Não há mais nada a esperar, nada a construir. O site está no ar, funciona, aceita encomendas.
+        A única diferença entre hoje e amanhã é: <strong>é seu ou não é?</strong>
+      </p>
+      <p>
+        Se avançarmos, transfiro o domínio, os acessos e o código para si — e pode começar a
+        receber encomendas ainda esta semana.
+      </p>
+      <p>
+        Se não avançarmos, o site sai do ar e a oportunidade fica em aberto para outra confeitaria
+        que queira crescer online.
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div style="padding: 40px 20px 0;">
+    <div class="wrap">
+      <div class="cta-section">
+        <h2>Domingas, veja o site antes de decidir.</h2>
+        <p>
+          Abra como se fosse uma cliente sua. Use o telemóvel.<br>
+          Se não gostar, não há compromisso. Se gostar — a oportunidade está aqui.
+        </p>
+        <a href="https://caju-doce-production.up.railway.app" target="_blank" class="btn">
+          🍰 Ver o meu site agora
+        </a>
+        <br />
+        <a href="https://wa.me/258879732457" target="_blank" class="btn-ghost">
+          💬 Falar por WhatsApp para fechar
+        </a>
+        <p class="urgency">Proposta exclusiva para a Domingas · Cajú Doce · Marracuene, Moçambique</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>Proposta elaborada exclusivamente para <strong>Cajú Doce</strong> · Bolos, Bolachas e Doces Premium · Marracuene, Moçambique</p>
+  </footer>
+
+</body>
+</html>
