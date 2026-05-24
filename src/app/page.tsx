@@ -6,20 +6,18 @@ export default function Home() {
   return (
     <>
       {/* HERO */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 -z-10">
-          <Image
-            src="/enfeite/hero.jpg"
-            alt=""
-            fill
-            priority
-            className="object-cover"
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-wine-dark/80 via-wine/70 to-wine-dark/90" />
-        </div>
+      <section className="relative flex min-h-[88vh] flex-col overflow-hidden">
+        <Image
+          src="/enfeite/bolo-bonito.jpg"
+          alt=""
+          fill
+          priority
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-wine-dark/85 via-wine/75 to-wine-dark/90" />
 
-        <div className="container-page flex min-h-[78vh] flex-col items-start justify-center py-16 text-cream sm:py-24">
+        <div className="container-page relative z-10 flex flex-1 flex-col items-start justify-center py-16 text-cream sm:py-24">
           <span className="rounded-full bg-gold/20 px-4 py-1 text-[11px] font-semibold uppercase tracking-[0.25em] text-gold-light">
             Marracuene · Moçambique
           </span>
